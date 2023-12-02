@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Trabalho_final_PDM</string>
+
+    //Login Strings
+    <string name="login_title">Login</string>
+    <string name="login_userHint">Email</string>
+    <string name="login_passwordHint">Senha</string>
+    <string name="login_button_singin">LOGAR</string>
+    <string name="login_forgetpass">Esqueci minha senha</string>
+    <string name="login_singup">Crie uma conta aqui</string>
+
+    //SingUp Strings
+    <string name="singup_title">Cadastro</string>
+    <string name="singup_instruction">Por favor digite seu nome de usuário e senha</string>
+    <string name="singup_userHint">Nome de usuário</string>
+    <string name="singup_emailHint">Email</string>
+    <string name="singup_passHint">Nova senha</string>
+    <string name="singup_repassHint">Repita a senha</string>
+    <string name="singup_submit">CADASTRAR</string>
+
+    //Dashboard Strings
+    <string name="dashboard_btn1">MÓDULO CONTA</string>
+    <string name="dashboard_btn2">MÓDULO PIX</string>
+    <string name="dashboard_btn3">SAIR</string>
+
+    //Account Strings
+    <string name="Account_title">Chave PIX</string>
+    <string name="Account_describle">Por favor registre uma chave PIX</string>
+    <string name="Account_btn1">REGISTRAR CHAVE</string>
+    <string-array name="Account_array">
+        <item>Celular</item>
+        <item>CPF</item>
+    </string-array>
+
+    //Módulo Conta Strings
+    <string name="deposito_btn">DEPÓSITO</string>
+    <string name="retirada_btn">SAQUE</string>
+    <string name="extrato_btn">EXTRATO</string>
+
+    //Módulo Título
+    <string name="deposito_mensagem_txt">MÓDULO DEPÓSITO</string>
+    <string name="retirada_mensagem_txt">MÓDULO SAQUE</string>
+    <string name="extrato_mensagem_txt">MÓDULO EXTRATO</string>
+
+    //Botão voltar
+    <string name="btn_voltar">VOLTAR</string>
+
+</resources>
