@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class Depositar extends AppCompatActivity {
@@ -20,6 +21,10 @@ public class Depositar extends AppCompatActivity {
     public void onClickDepositar(View view) {
         EditText editText = findViewById(R.id.idEditValorSacar);
         Double deposito = Double.parseDouble(editText.getText().toString());
+        if (deposito <=0){
+            Toast.makeText(this, "Por favor digite um valor válido", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Double valor = repository.getSaldo() + deposito;
         repository.movimentacao(valor);
         repository.log("Deposito de "+deposito+" Saldo atualizado "+valor);

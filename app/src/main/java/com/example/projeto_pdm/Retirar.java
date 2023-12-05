@@ -21,9 +21,15 @@ public class Retirar extends AppCompatActivity {
     public void onClickRetirar(View view) {
         EditText editText = findViewById(R.id.idEditValorSacar);
         Double saque = Double.parseDouble(editText.getText().toString());
+        if (saque <= 0){
+            Toast.makeText(this, "Por favor digite um valor válido", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if(repository.getSaldo() < saque){
             Toast.makeText(this, "Saldo insuficiente", Toast.LENGTH_SHORT).show();
-        }else{
+            return;
+        }
+
             Double valor = repository.getSaldo() - saque;
             repository.movimentacao(valor);
             repository.log("Saque de "+saque+" saldo atualizado "+valor);
@@ -31,4 +37,3 @@ public class Retirar extends AppCompatActivity {
             finish();
         }
     }
-}

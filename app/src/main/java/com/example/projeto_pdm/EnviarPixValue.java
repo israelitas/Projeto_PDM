@@ -23,15 +23,20 @@ public class EnviarPixValue extends AppCompatActivity {
     public void onClickEnviar(View view) {
         EditText editText = findViewById(R.id.idEditEnvValor);
         Double valor = Double.parseDouble(editText.getText().toString());
+        if (valor <=0){
+            Toast.makeText(this, "Por favor digite uma valor válido", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if(repository.getSaldo() < valor){
             Toast.makeText(this, "Saldo insuficiente", Toast.LENGTH_SHORT).show();
-        }else{
-            Double saldo = repository.getSaldo()-valor;
-            repository.movimentacao(saldo);
-            repository.upDateUsos(chave,repository.getUso(chave)+1);
-            repository.log("Pix enviado de "+valor+" saldo atualizado de "+ saldo);
-            setResult(1);
-            finish();
+            return;
         }
+        Double saldo = repository.getSaldo()-valor;
+        repository.movimentacao(saldo);
+        repository.upDateUsos(chave,repository.getUso(chave)+1);
+        repository.log("Pix enviado de "+valor+" saldo atualizado de "+ saldo);
+        setResult(1);
+        finish();
+
     }
 }
