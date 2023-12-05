@@ -7,8 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="dark_orange">#FF8C00</color>
-    <color name="dark_brown">#8B4513</color>
-    <color name="light_brown">#FFDEAD</color>
-    <color name="sandy_brown">#F4A460</color>
+    <color name="dark_orange">#4B0082</color>
+    <color name="dark_brown">#483D8B</color>
+    <color name="light_brown">#836FFF</color>
+    <color name="sandy_brown">#87CEEB</color>
 </resources>

@@ -21,7 +21,10 @@
             android:layout_height="52dp"
             android:gravity="bottom|left"
             android:text="Saldo"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:id="@+id/idTextSaldo"
@@ -29,7 +32,9 @@
             android:layout_height="68dp"
             android:gravity="left|center_vertical"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"

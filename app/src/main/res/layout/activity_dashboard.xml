@@ -28,14 +28,17 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Seja Bem vindo"
-                android:textSize="24sp" />
+                android:textSize="28sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@color/dark_orange"/>
         </LinearLayout>
 
         <LinearLayout
             style="@style/ContainerComponents"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@drawable/background"
+            android:background="@color/dark_orange"
             android:orientation="vertical">
 
             <TextView
@@ -44,14 +47,20 @@
                 android:layout_height="50dp"
                 android:gravity="left|center_vertical"
                 android:text="Saldo"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@color/dark_orange"/>
 
             <TextView
                 android:id="@+id/idTextValor"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="TextView"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/white"/>
         </LinearLayout>
 
         <LinearLayout
