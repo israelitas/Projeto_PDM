@@ -19,7 +19,7 @@ public class Dashboard extends AppCompatActivity {
         repository = new Repository(this);
 
         TextView name = findViewById(R.id.idTextDash);
-        name.setText("Olá, "+repository.getNome());
+        name.setText("Seja bem vindo");
         TextView textValor = findViewById(R.id.idTextValor);
         textValor.setText(""+repository.getSaldo());
     }
