@@ -23,17 +23,20 @@ public class EnviarPix extends AppCompatActivity {
 
     public void onClickEnviarPix(View view) {
         EditText rawChave = findViewById(R.id.idEditEnvChav);
-        int chave = Integer.parseInt(rawChave.getText().toString());
+        String chaveStr = rawChave.getText().toString();
         boolean existe = false;
-        for (Integer chaveL : repository.getChaves()) {
-            if(chaveL.equals(chave)){
+
+        for (String chave : repository.getChaves()) {
+            if(chave.equals(chaveStr)){
                 existe = true;
                 Intent intent = new Intent(this, EnviarPixValue.class);
-                intent.putExtra("chave",chave);
-                startActivityForResult(intent,1);
+                intent.putExtra("chave", chave);
+                startActivityForResult(intent, 1);
+                break; // Interrompe o loop, pois já encontrou a chave
             }
         }
-        if(existe == false){
+
+        if(!existe){
             Toast.makeText(this, "A chave pix deve ser cadastrada primeiro", Toast.LENGTH_SHORT).show();
         }
     }

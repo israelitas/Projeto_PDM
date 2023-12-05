@@ -23,7 +23,7 @@ public class CadastrarChaves extends AppCompatActivity {
 
     public void onClickCadastrar(View view) {
         if(!rawChave.getText().toString().equals("")){
-            int chave = Integer.parseInt(rawChave.getText().toString());
+            String chave = rawChave.getText().toString();
             repository.setChave(chave);
             setResult(1);
             finish();
@@ -34,8 +34,8 @@ public class CadastrarChaves extends AppCompatActivity {
 
     public void onClickRemoveChave(View view) {
         Boolean isRemoved = false;
-        for (Integer chave : repository.getChaves()) {
-            if(Integer.parseInt(rawChave.getText().toString()) == chave){
+        for (String chave : repository.getChaves()) {
+            if((rawChave.getText().toString()) == chave){
                 repository.rmChave(chave);
                 isRemoved = true;
                 Toast.makeText(this, "Chave removida", Toast.LENGTH_SHORT).show();

@@ -9,14 +9,14 @@ import android.widget.Toast;
 
 
 public class EnviarPixValue extends AppCompatActivity {
-    int chave;
+    String chave;
     Repository repository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enviar_pix_value);
-        chave = (int) getIntent().getSerializableExtra("chave");
+        chave = (String) getIntent().getSerializableExtra("chave");
         repository = new Repository(this);
     }
 

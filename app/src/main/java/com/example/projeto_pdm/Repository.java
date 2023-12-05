@@ -48,7 +48,7 @@ public class Repository extends SQLiteOpenHelper {
 
         String sqlChaves = "CREATE TABLE chaves(\n" +
                 "    id_fk int,\n" +
-                "    chave int,\n" +
+                "    chave text,\n" +
                 "    usos int,\n" +
                 "    FOREIGN KEY (id_fk)\n" +
                 "    REFERENCES usuario (id)\n" +
@@ -133,25 +133,26 @@ public class Repository extends SQLiteOpenHelper {
         return list;
     }
 
-    public void setChave(int chave){
+    public void setChave(String chave){
         String sql = "INSERT INTO `chaves`(`id_fk`, `chave`) VALUES ('1','"+chave+"')";
         getWritableDatabase().execSQL(sql);
     }
 
-    public ArrayList<Integer> getChaves(){
-        ArrayList<Integer> list = new ArrayList<>();
+    public ArrayList<String> getChaves(){
+        ArrayList<String> list = new ArrayList<>(); // Agora é uma lista de Strings
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT chave FROM `chaves` WHERE 1", null);
         cursor.moveToFirst();
         for(int i = 0; i < cursor.getCount(); i++){
-            list.add(cursor.getInt(0));
+            list.add(cursor.getString(0)); // Obtém o valor como uma String
             cursor.moveToNext();
         }
         cursor.close();
         return list;
     }
 
-    public void rmChave(int chave){
+
+    public void rmChave(String chave){
         String sql = "DELETE FROM `chaves` WHERE chave = "+chave;
         getWritableDatabase().execSQL(sql);
     }
@@ -169,7 +170,7 @@ public class Repository extends SQLiteOpenHelper {
         return list;
     }
 
-    public int getUso(int chave){
+    public int getUso(String chave){
         int uso;
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("select usos from chaves where chave = "+chave, null);
@@ -179,7 +180,7 @@ public class Repository extends SQLiteOpenHelper {
         return uso;
     }
 
-    public void upDateUsos(int chave, int usos){
+    public void upDateUsos(String chave, int usos){
         String sql = "UPDATE `chaves` SET `usos`='"+usos+"' WHERE chave = "+chave;
         getWritableDatabase().execSQL(sql);
     }
