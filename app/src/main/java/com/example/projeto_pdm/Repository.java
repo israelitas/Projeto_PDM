@@ -56,7 +56,7 @@ public class Repository extends SQLiteOpenHelper {
                 ")";
         sqLiteDatabase.execSQL(sqlChaves);
 
-        String sqlAdd = "INSERT INTO `usuario`(`id`, `nome`, `cpf`, `senha`, `saldo`) VALUES ('1','Israel','42','123','1000')";
+        String sqlAdd = "INSERT INTO `usuario`(`id`, `nome`, `cpf`, `senha`, `saldo`) VALUES ('1','Israel','42','123','00')";
         sqLiteDatabase.execSQL(sqlAdd);
     }
 
@@ -140,12 +140,13 @@ public class Repository extends SQLiteOpenHelper {
     }
 
     public ArrayList<String> getChaves(){
-        ArrayList<String> list = new ArrayList<>(); // Agora é uma lista de Strings
+        ArrayList<String> list = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT chave FROM `chaves` WHERE 1", null);
         cursor.moveToFirst();
+
         for(int i = 0; i < cursor.getCount(); i++){
-            list.add(cursor.getString(0)); // Obtém o valor como uma String
+            list.add(cursor.getString(0));
             cursor.moveToNext();
         }
         cursor.close();
@@ -180,7 +181,6 @@ public class Repository extends SQLiteOpenHelper {
         if (cursor != null && cursor.moveToFirst()) {
             uso = cursor.getInt(cursor.getColumnIndex("usos"));
         }
-
         cursor.close();
         return uso;
     }
