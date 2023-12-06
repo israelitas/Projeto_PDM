@@ -35,7 +35,7 @@ public class CadastrarChaves extends AppCompatActivity {
     public void onClickRemoveChave(View view) {
         Boolean isRemoved = false;
         for (String chave : repository.getChaves()) {
-            if((rawChave.getText().toString()) == chave){
+            if(rawChave.getText().toString().equals(chave)){
                 repository.rmChave(chave);
                 isRemoved = true;
                 Toast.makeText(this, "Chave removida", Toast.LENGTH_SHORT).show();

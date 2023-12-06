@@ -16,7 +16,7 @@ public class Chaves extends AppCompatActivity {
         Repository repository = new Repository(this);
 
         ListView listView = findViewById(R.id.idListViewChaves);
-        ArrayAdapter<Double> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, repository.getChaves());
+        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, repository.getChaves());
         listView.setAdapter(adapter);
     }
 }

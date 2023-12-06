@@ -1,5 +1,6 @@
 package com.example.projeto_pdm;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -170,12 +171,16 @@ public class Repository extends SQLiteOpenHelper {
         return list;
     }
 
+    @SuppressLint("Range")
     public int getUso(String chave){
-        int uso;
+        int uso = 0;
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("select usos from chaves where chave = "+chave, null);
-        cursor.moveToFirst();
-        uso = cursor.getInt(0);
+        Cursor cursor = db.rawQuery("SELECT usos FROM chaves WHERE chave = ?", new String[]{chave});
+
+        if (cursor != null && cursor.moveToFirst()) {
+            uso = cursor.getInt(cursor.getColumnIndex("usos"));
+        }
+
         cursor.close();
         return uso;
     }
