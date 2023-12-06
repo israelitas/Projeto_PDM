@@ -16,7 +16,7 @@ public class Favoritos extends AppCompatActivity {
         Repository repository = new Repository(this);
 
         ListView listView = findViewById(R.id.idListViewFav);
-        ArrayAdapter<Integer> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, repository.getUsos());
+        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, repository.getChaves());
         listView.setAdapter(adapter);
     }
 }

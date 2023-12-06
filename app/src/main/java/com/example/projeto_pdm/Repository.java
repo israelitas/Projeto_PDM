@@ -55,7 +55,7 @@ public class Repository extends SQLiteOpenHelper {
                 ")";
         sqLiteDatabase.execSQL(sqlChaves);
 
-        String sqlAdd = "INSERT INTO `usuario`(`id`, `nome`, `cpf`, `senha`, `saldo`) VALUES ('1','Alisson','42','123','2100')";
+        String sqlAdd = "INSERT INTO `usuario`(`id`, `nome`, `cpf`, `senha`, `saldo`) VALUES ('1','Israel','42','123','1000')";
         sqLiteDatabase.execSQL(sqlAdd);
     }
 

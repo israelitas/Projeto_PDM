@@ -31,9 +31,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="97dp"
-                android:orientation="horizontal"
-                android:layout_margin="10dp">
+                android:layout_height="614dp"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/button5"
@@ -43,6 +43,7 @@
                     android:background="@drawable/background"
                     android:onClick="onClickCadastrarChave"
                     android:text="Cadastrar Chave"
+                    android:layout_margin="10dp"
                     android:textSize="10sp" />
 
                 <Button
@@ -53,7 +54,8 @@
                     android:background="@drawable/background"
                     android:onClick="onClickChaves"
                     android:text="Chaves"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:layout_margin="10dp"/>
 
                 <Button
                     android:id="@+id/button7"
@@ -63,7 +65,8 @@
                     android:background="@drawable/background"
                     android:onClick="onClickEnviarPix"
                     android:text="Enviar Pix"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:layout_margin="10dp"/>
 
                 <Button
                     android:id="@+id/button8"
@@ -73,7 +76,8 @@
                     android:background="@drawable/background"
                     android:onClick="onClickFavoritos"
                     android:text="Favoritos"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:layout_margin="10dp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
